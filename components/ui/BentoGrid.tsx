@@ -4,11 +4,13 @@ import { cn } from "@/utils/cn";
 import { TbBackground } from "react-icons/tb";
 import { BackgroundGradientAnimation } from "./GradientBg";
 import GridGlobe from "./GridGlobe";
-import Lottie from "react-lottie";
 import { useState } from "react";
 import animationData from "@/data/confetti.json";
 import MagicButton from "./MagicButton";
 import { IoCopyOutline } from "react-icons/io5";
+import dynamic from "next/dynamic";
+
+const Lottie = dynamic(() => import("react-lottie"), { ssr: false });
 
 export const BentoGrid = ({ className, children }: { className?: string; children?: React.ReactNode }) => {
     return <div className={cn("md:grid-row-7 mx-auto grid w-full grid-cols-1 gap-4 py-20 md:grid-cols-6 lg:grid-cols-5 lg:gap-8", className)}>{children}</div>;
@@ -38,7 +40,7 @@ export const BentoGridItem = ({
     const [copied, setCopied] = useState(false);
 
     const handleCopy = () => {
-        navigator.clipboard.writeText("contact@jsmatery.pro");
+        navigator.clipboard.writeText("ahmet@techdag.com.tr");
 
         setCopied(true);
     };
